@@ -107,7 +107,7 @@ public class EscPosPrinter extends EscPosPrinterSize {
                 .parse();
 
         this.printer.reset();
-
+        int i = 0;
         for (PrinterTextParserLine line : linesParsed) {
             PrinterTextParserColumn[] columns = line.getColumns();
 
@@ -120,7 +120,7 @@ public class EscPosPrinter extends EscPosPrinterSize {
                 }
             }
 
-            if (lastElement instanceof PrinterTextParserString) {
+            if (lastElement instanceof PrinterTextParserString && i < linesParsed.length - 1) {
                 this.printer.newLine();
             }
         }
