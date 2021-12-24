@@ -123,6 +123,7 @@ public class EscPosPrinter extends EscPosPrinterSize {
             if (lastElement instanceof PrinterTextParserString && i < linesParsed.length - 1) {
                 this.printer.newLine();
             }
+            i++
         }
 
         this.printer.feedPaper(dotsFeedPaper);
